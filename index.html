@@ -16,7 +16,62 @@
         </div>
       </div>
     </nav>
-    <main class="flex-1 m-auto container">Body web</main>
+    <main class="flex-1 m-auto container">
+      <div id="homepage-header" class="py-8">
+        <h1 class="text-3xl font-semibold py-2">Welcome :)</h1>
+        <p class="text-lg">
+          Tambahkan suatu kalimat untuk mendeskripsikan website dan isi
+          websitenya disini.
+        </p>
+      </div>
+
+      <div id="grid-articles" class="mt-4">
+        <h2 class="text-xl py-4 font-semibold">Artikel terbaru hari ini</h2>
+        <div class="grid auto-cols-fr grid-flow-col gap-20 *:hover:shadow-lg">
+          <div
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+          >
+            <div>Tag</div>
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </div>
+          <div
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+          >
+            <div>Tag</div>
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </div>
+          <div
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+          >
+            <div>Tag</div>
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="list-articles" class="my-8">
+        <h2 class="text-xl py-4 font-semibold">Daftar artikel lain</h2>
+        <ul
+          class="flex flex-col gap-4 *:border-t *:border-t-gray-300 *:hover:opacity-60"
+        >
+          <li class="cursor-pointer">
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </li>
+          <li class="cursor-pointer">
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </li>
+          <li class="cursor-pointer">
+            <h3 class="text-xl font-semibold py-4">Judul</h3>
+            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
+          </li>
+        </ul>
+      </div>
+    </main>
     <footer class="h-[200px] bg-blue-300">
       <div class="container m-auto">Footer web</div>
     </footer>
