@@ -1,0 +1,198 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <title>Membuat accordion sederhana dengan HTML dan CSS</title>
+  </head>
+  <body class="min-h-[100vh] flex flex-col">
+    <nav class="h-[70px] relative w-full">
+      <div
+        class="fixed w-full h-[70px] bg-blue-300 flex items-center justify-between"
+      >
+        <div class="container m-auto">
+          <a class="text-xl font-semibold" href="../index.html">Title Web</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 m-auto container pb-10 [&_p]:py-2 text-justify">
+      <div id="homepage-header" class="py-8 border-b border-b-gray-300">
+        <h1 class="text-3xl font-semibold py-2">
+          Membuat accordion sederhana dengan HTML dan CSS
+        </h1>
+        <span>Oleh: Alfarell Muchamad Yuwanto</span>
+      </div>
+
+      <div id="content">
+        <p>
+          Sesuai judul artikel, kali ini kita akan membuat sebuah menu accordion
+          dengan menggunakan HTML dan CSS murni tanpa menggunakan Javascript
+          sedikitpun.
+        </p>
+        <p>
+          Pada kasus tertentu, suatu halaman web akan dibuka dengan menggunakan
+          browser yang tidak mendukung javascipt, atau mungkin user
+          menonaktifkan fitur javascript tersebut, sehingga menu accordion yang
+          menggunakan javascript tidak bisa dibuka oleh user. Alasan lain
+          mengapa kita tidak menggunakan javascript adalah karena javascript
+          akan dimuat oleh browser dan membuat halaman web kita akan sedikit
+          lebih lama dimuat.
+        </p>
+        <p>
+          Ada berbagai cara untuk membuat accordion, dan cara yang akan kita
+          bahas untuk membuat accordion di artikel kali ini yaitu dengan
+          memanfaatkan element <span>details</span> dan <span>summary</span>.
+          Bisa dibilang ini adalah cara termudah dan paling bersih untuk membuat
+          accordion tanpa JavaScript.
+        </p>
+        <p>
+          Buat struktur HTML menggunakan tag details dan summary. Tag summary
+          akan menjadi judul accordion, dan konten yang tersembunyi akan
+          ditempatkan di dalam tag details.
+        </p>
+
+        <pre>
+          <code class="language-html">
+            &lt;details&gt; 
+              &lt;summary&gt;Judul Accordion 1&lt;/summary&gt;
+              &lt;p&gt;Konten accordion 1&lt;/p&gt; 
+            &lt;/details&gt; 
+            &lt;details&gt;
+              &lt;summary&gt;Judul Accordion 2&lt;/summary&gt; 
+              &lt;p&gt;Konten accordion 2&lt;/p&gt; 
+            &lt;/details&gt;
+          </code>
+        </pre>
+
+        <p>Kode di atas akan menghasilkan tampilan seperti berikut:</p>
+
+        <div class="p-4 border border-b-gray-300 rounded bg-blue-300/30">
+          <details>
+            <summary>Judul Accordion 1</summary>
+            <p>Konten accordion 1</p>
+          </details>
+          <details>
+            <summary>Judul Accordion 2</summary>
+            <p>Konten accordion 2</p>
+          </details>
+        </div>
+
+        <p>
+          Selanjutnya kita hanya perlu melakukan styling agar tampilan dari
+          accordionnya terlihat lebih menarik dan rapi.
+        </p>
+
+        <pre>
+          <code class="language-css">
+            details {
+              border: 1px solid #ccc;
+              margin-bottom: 10px;
+              border-radius: 5px;
+              overflow: hidden; /* Untuk memastikan konten tersembunyi dengan baik */
+            }
+
+            summary {
+              background-color: #f1f1f1;
+              padding: 10px;
+              cursor: pointer;
+              list-style: none; /* Menghilangkan ikon panah bawaan */
+              position: relative; /* Untuk penempatan ::marker */
+            }
+
+            summary::-webkit-details-marker {
+              display: none; /* Menghilangkan ikon panah bawaan pada Chrome/Safari */
+            }
+
+            summary::before {
+              content: '+'; /* Ikon panah */
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              font-size: 1.2em;
+            }
+
+            details[open] > summary::before {
+              content: '-'; /* Ganti ikon panah saat terbuka */
+            }
+
+            details > p {
+              padding: 10px;
+            }
+          </code>
+        </pre>
+
+        <p>Maka hasilnya akan tampil seperti ini:</p>
+
+        <div class="p-4 border border-b-gray-300 rounded bg-blue-300/30">
+          <style>
+            .accordion {
+              border: 1px solid #ccc;
+              margin-bottom: 10px;
+              border-radius: 5px;
+              overflow: hidden; /* Untuk memastikan konten tersembunyi dengan baik */
+            }
+
+            .accordion-title {
+              background-color: #f1f1f1;
+              padding: 10px;
+              cursor: pointer;
+              list-style: none; /* Menghilangkan ikon panah bawaan */
+              position: relative; /* Untuk penempatan ::marker */
+            }
+
+            .accordion-title::-webkit-details-marker {
+              display: none; /* Menghilangkan ikon panah bawaan pada Chrome/Safari */
+            }
+
+            .accordion-title::before {
+              content: "+"; /* Ikon panah */
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              font-size: 1.2em;
+            }
+
+            .accordion[open] > .accordion-title::before {
+              content: "-"; /* Ganti ikon panah saat terbuka */
+            }
+
+            .accordion > .accordion-content {
+              background-color: #fff;
+              padding: 10px;
+            }
+          </style>
+          <details class="accordion">
+            <summary class="accordion-title">Judul Accordion 1</summary>
+            <div class="accordion-content">Konten accordion 1</div>
+          </details>
+          <details class="accordion">
+            <summary class="accordion-title">Judul Accordion 2</summary>
+            <div class="accordion-content">Konten accordion 2</div>
+          </details>
+        </div>
+
+        <p>
+          Dengan langkah-langkah ini, kita akan memiliki accordion sederhana
+          yang dapat dibuka dan ditutup dengan mengklik judulnya, tanpa perlu
+          JavaScript.
+        </p>
+      </div>
+    </main>
+
+    <footer class="h-[200px] bg-blue-300">
+      <div class="container m-auto">Footer web</div>
+    </footer>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
