@@ -74,97 +74,97 @@
         <p>
           Disinilah properti CSS "object-fit" bisa berperan. Properti
           "object-fit" memiliki beberapa value yang bisa digunakan untuk
-          menyesuaikan gambar, seperti:
+          menyesuaikan gambar.
         </p>
-        <ol class="list-decimal pl-5">
+        <p>
+          Dibawah ini adalah beberapa value dari object-fit beserta
+          contoh-contoh dari penerapan properti object-fit untuk setiap
+          valuenya.
+        </p>
+        <ol class="list-decimal pl-5 [&_li]:mt-4">
           <li>
-            <span class="rounded bg-blue-200/40 py-0.5 px-3">fill</span> : Ini
-            adalah value default dari properti object-fit. Gambar akan diubah
-            ukurannya agar sesuai dengan dimensi yang diberikan ke tag
-            pembungkus. Jika perlu, gambar akan diregangkan atau dikompresi agar
-            sesuai.
+            <p>
+              <span class="rounded bg-blue-200/40 py-0.5 px-3">fill</span> : Ini
+              adalah value default dari properti object-fit. Gambar akan diubah
+              ukurannya agar sesuai dengan dimensi yang diberikan ke tag
+              pembungkus. Jika perlu, gambar akan diregangkan atau dikompresi
+              agar sesuai.
+            </p>
+            <h3 class="text-xl">object-fit: fill</h3>
+            <div
+              class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
+            >
+              <img
+                src="../assets/images/danau-toba.jpg"
+                class="w-[250px] h-[300px] bg-gray-200 object-fill"
+              />
+            </div>
           </li>
           <li>
-            <span class="rounded bg-blue-200/40 py-0.5 px-3">contain</span> :
-            Gambar akan mempertahankan aspect rationya, tetapi ukurannya akan
-            diubah agar menyesuaikan dengan dimensi tag yang diberikan.
+            <p>
+              <span class="rounded bg-blue-200/40 py-0.5 px-3">contain</span> :
+              Gambar akan mempertahankan aspect rationya, tetapi ukurannya akan
+              diubah agar menyesuaikan dengan dimensi tag yang diberikan.
+            </p>
+            <h3 class="text-xl">object-fit: contain</h3>
+            <div
+              class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
+            >
+              <img
+                src="../assets/images/danau-toba.jpg"
+                class="w-[250px] h-[300px] bg-gray-200 object-contain"
+              />
+            </div>
           </li>
           <li>
-            <span class="rounded bg-blue-200/40 py-0.5 px-3">cover</span> :
-            Gambar akan mempertahankan aspect rationya dan memenuhi dimensi yang
-            diberikan. Tetapi akan terdapat bagian pada gambar yang dipotong
-            agar menyesuaikan ukuran tag pembungkusnya.
+            <p>
+              <span class="rounded bg-blue-200/40 py-0.5 px-3">cover</span> :
+              Gambar akan mempertahankan aspect rationya dan memenuhi dimensi
+              yang diberikan. Tetapi akan terdapat bagian pada gambar yang
+              dipotong agar menyesuaikan ukuran tag pembungkusnya.
+            </p>
+            <h3 class="text-xl">object-fit: cover</h3>
+            <div
+              class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
+            >
+              <img
+                src="../assets/images/danau-toba.jpg"
+                class="w-[250px] h-[300px] bg-gray-200 object-cover"
+              />
+            </div>
           </li>
           <li>
-            <span class="rounded bg-blue-200/40 py-0.5 px-3">none</span> :
-            Ukuran gambar tidak akan diubah.
+            <p>
+              <span class="rounded bg-blue-200/40 py-0.5 px-3">none</span> :
+              Ukuran gambar tidak akan diubah.
+            </p>
+            <h3 class="text-xl">object-fit: none</h3>
+            <div
+              class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
+            >
+              <img
+                src="../assets/images/danau-toba.jpg"
+                class="w-[250px] h-[300px] bg-gray-200 object-none"
+              />
+            </div>
           </li>
           <li>
-            <span class="rounded bg-blue-200/40 py-0.5 px-3">scale-down</span> :
-            Gambar akan diperkecil ke versi terkecil seperti value "none" atau
-            "contain".
+            <p>
+              <span class="rounded bg-blue-200/40 py-0.5 px-3">scale-down</span>
+              : Gambar akan diperkecil ke versi terkecil seperti value "none"
+              atau "contain".
+            </p>
+            <h3 class="text-xl">object-fit: scale-down</h3>
+            <div
+              class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
+            >
+              <img
+                src="../assets/images/danau-toba.jpg"
+                class="w-[250px] h-[300px] bg-gray-200 object-scale-down"
+              />
+            </div>
           </li>
         </ol>
-
-        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
-          Contoh penerapan object-fit
-        </h2>
-        <p>
-          Dibawah ini adalah contoh-contoh dari penerapan properti "object-fit"
-          untuk setiap valuenya.
-        </p>
-
-        <div class="[&_h3]:mt-4">
-          <h3 class="text-xl">object-fit: fill</h3>
-          <div
-            class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
-          >
-            <img
-              src="../assets/images/danau-toba.jpg"
-              class="w-[250px] h-[300px] bg-gray-200 object-fill"
-            />
-          </div>
-
-          <h3 class="text-xl">object-fit: contain</h3>
-          <div
-            class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
-          >
-            <img
-              src="../assets/images/danau-toba.jpg"
-              class="w-[250px] h-[300px] bg-gray-200 object-contain"
-            />
-          </div>
-
-          <h3 class="text-xl">object-fit: cover</h3>
-          <div
-            class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
-          >
-            <img
-              src="../assets/images/danau-toba.jpg"
-              class="w-[250px] h-[300px] bg-gray-200 object-cover"
-            />
-          </div>
-
-          <h3 class="text-xl">object-fit: none</h3>
-          <div
-            class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
-          >
-            <img
-              src="../assets/images/danau-toba.jpg"
-              class="w-[250px] h-[300px] bg-gray-200 object-none"
-            />
-          </div>
-
-          <h3 class="text-xl">object-fit: scale-down</h3>
-          <div
-            class="w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-5 bg-blue-200/40"
-          >
-            <img
-              src="../assets/images/danau-toba.jpg"
-              class="w-[250px] h-[300px] bg-gray-200 object-scale-down"
-            />
-          </div>
-        </div>
       </div>
     </main>
 
