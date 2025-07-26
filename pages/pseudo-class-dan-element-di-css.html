@@ -1,0 +1,142 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Mengenal Pseudo-class dan Pseudo-element di CSS</title>
+  </head>
+  <body class="min-h-[100vh] flex flex-col">
+    <nav class="h-[70px] relative w-full">
+      <div
+        class="fixed w-full h-[70px] bg-blue-300 flex items-center justify-between"
+      >
+        <div class="container m-auto">
+          <a class="text-xl font-semibold" href="../index.html">WebEduku</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 m-auto container pb-10 [&_p]:py-2 text-justify">
+      <div id="homepage-header" class="py-8 border-b border-b-gray-300">
+        <h1 class="text-3xl font-semibold py-2">
+          Mengenal Pseudo-class dan Pseudo-element di CSS
+        </h1>
+        <span>Oleh: Alfarell Muchamad Yuwanto</span>
+      </div>
+
+      <div id="content">
+        <p>
+          Dalam CSS, terdapat dua fitur yang sangat penting untuk memperkaya
+          tampilan tanpa perlu menambahkan elemen HTML tambahan, yaitu
+          <strong>pseudo-class</strong> dan <strong>pseudo-element</strong>.
+        </p>
+
+        <p>
+          Kedua fitur ini memungkinkan kita untuk menargetkan elemen tertentu
+          berdasarkan kondisi atau untuk menyisipkan konten secara virtual.
+        </p>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Apa itu Pseudo-class?
+        </h2>
+        <p>
+          Pseudo-class adalah "kelas semu" yang digunakan untuk memberikan style
+          berdasarkan keadaan tertentu dari elemen. Contohnya saat mouse
+          diarahkan ke sebuah tombol, kita bisa mengubah warnanya menggunakan
+          pseudo-class.
+        </p>
+        <p>Beberapa contoh pseudo-class umum antara lain:</p>
+        <ul class="list-disc pl-5">
+          <li><code>:hover</code> — saat elemen disentuh kursor</li>
+          <li>
+            <code>:focus</code> — saat elemen mendapat fokus (biasanya input)
+          </li>
+          <li>
+            <code>:nth-child(n)</code> — memilih elemen berdasarkan urutan anak
+          </li>
+          <li>
+            <code>:checked</code> — saat checkbox atau radio dalam keadaan aktif
+          </li>
+        </ul>
+
+        <div class="mt-4 p-4 rounded-xl bg-blue-200/40 border border-gray-300">
+          <p class="font-semibold">Contoh penggunaan :hover</p>
+          <button
+            class="px-4 py-2 mt-2 bg-blue-500 text-white hover:bg-blue-700 transition-colors"
+          >
+            Arahkan kursor ke sini
+          </button>
+        </div>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Apa itu Pseudo-element?
+        </h2>
+        <p>
+          Pseudo-element adalah elemen semu yang digunakan untuk menambahkan
+          konten atau style pada bagian tertentu dari elemen, seperti awal atau
+          akhir. Pseudo-element ditulis menggunakan <code>::</code> (dua titik
+          dua).
+        </p>
+
+        <p>Beberapa pseudo-element yang populer adalah:</p>
+        <ul class="list-disc pl-5">
+          <li><code>::before</code> — menambahkan konten sebelum isi elemen</li>
+          <li><code>::after</code> — menambahkan konten setelah isi elemen</li>
+          <li>
+            <code>::first-letter</code> — menargetkan huruf pertama dari teks
+          </li>
+          <li>
+            <code>::first-line</code> — menargetkan baris pertama dari paragraf
+          </li>
+        </ul>
+
+        <div
+          class="mt-4 p-4 rounded-xl bg-blue-200/40 border border-gray-300 relative"
+        >
+          <p class="font-semibold mb-2">
+            Contoh penggunaan ::before dan ::after
+          </p>
+          <div
+            class="relative pseudo-demo px-4 py-2 bg-gray-100 text-black inline-block"
+          >
+            Konten utama
+          </div>
+          <style>
+            .pseudo-demo::before {
+              content: "← ";
+              color: red;
+            }
+            .pseudo-demo::after {
+              content: " →";
+              color: red;
+            }
+          </style>
+        </div>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Kesimpulan
+        </h2>
+        <p>
+          Pseudo-class dan pseudo-element sangat berguna dalam mempercantik
+          tampilan dan meningkatkan interaktivitas tanpa perlu menambahkan
+          elemen HTML tambahan. Mereka adalah bagian penting dari teknik styling
+          modern.
+        </p>
+      </div>
+    </main>
+
+    <footer class="h-[200px] bg-blue-300">
+      <div
+        class="w-full h-full container m-auto flex items-center justify-center"
+      >
+        © 2025 WebEduku. Seluruh konten dibuat untuk keperluan edukasi
+        pemrograman web.
+      </div>
+    </footer>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

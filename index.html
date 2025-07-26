@@ -12,7 +12,7 @@
         class="fixed w-full h-[70px] bg-blue-300/40 flex items-center justify-between"
       >
         <div class="container m-auto">
-          <a class="text-xl font-semibold" href="index.html">Title Web</a>
+          <a class="text-xl font-semibold" href="index.html">WebEduku</a>
         </div>
       </div>
     </nav>
@@ -20,32 +20,62 @@
       <div id="homepage-header" class="py-8">
         <h1 class="text-3xl font-semibold py-2">Welcome :)</h1>
         <p class="text-lg">
-          Tambahkan suatu kalimat untuk mendeskripsikan website dan isi
-          websitenya disini.
+          Website ini dibuat sebagai media pembelajaran seputar pemrograman web,
+          khususnya HTML, CSS, dan JavaScript. Di dalamnya terdapat artikel
+          materi dasar, tips & trik, serta penjelasan praktis dengan contoh
+          nyata untuk membantu kamu belajar lebih cepat.
         </p>
       </div>
 
       <div id="grid-articles" class="mt-4">
         <h2 class="text-xl py-4 font-semibold">Artikel terbaru hari ini</h2>
         <div class="grid auto-cols-fr grid-flow-col gap-20 *:hover:shadow-lg">
-          <div
-            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+          <a
+            href="./pages/pseudo-class-dan-element-di-css.html"
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] p-4 rounded"
           >
-            <div>Tag</div>
-            <h3 class="text-xl font-semibold py-4">Judul</h3>
-            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
-          </div>
-          <div
-            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+            <div class="mb-2">
+              <div class="px-2 rounded-full bg-white w-min">CSS</div>
+            </div>
+            <img
+              src="./assets/images/css-modal-pseudo-class.png"
+              class="h-[200px] w-full rounded object-fit"
+            />
+            <h3 class="text-xl font-semibold py-4">
+              Mengenal Pseudo-class dan Pseudo-element di CSS
+            </h3>
+            <div class="text-ellipsis line-clamp-3">
+              Dalam CSS, terdapat dua fitur yang sangat penting untuk memperkaya
+              tampilan tanpa perlu menambahkan elemen HTML tambahan, yaitu
+              <strong>pseudo-class</strong> dan
+              <strong>pseudo-element</strong>
+            </div>
+          </a>
+          <a
+            href="./pages/mengenal-framework-css.html"
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] p-4 cursor-pointer rounded"
           >
-            <div>Tag</div>
-            <h3 class="text-xl font-semibold py-4">Judul</h3>
-            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
-          </div>
+            <div class="mb-2">
+              <div class="px-2 rounded-full bg-white w-min">CSS</div>
+            </div>
+            <img
+              src="./assets/images/tailwind-and-bootstrap.png"
+              class="h-[200px] w-full rounded object-fit"
+            />
+            <h3 class="text-xl font-semibold py-4">
+              Mengenal Framework CSS seperti Tailwind dan Bootstrap
+            </h3>
+            <div class="text-ellipsis line-clamp-3">
+              Dalam pengembangan web modern, menulis kode CSS dari nol untuk
+              setiap elemen bisa memakan waktu dan rentan tidak konsisten. Oleh
+              karena itu, banyak developer kini menggunakan framework CSS untuk
+              mempercepat pengembangan dan menjaga struktur desain yang rapi.
+            </div>
+          </a>
           <div
-            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] aspect-[4/3] p-4 cursor-pointer"
+            class="bg-blue-300 w-full min-w-[100px] max-w-[400px] p-4 cursor-pointer rounded"
           >
-            <div>Tag</div>
+            <div class="mb-2">Tag</div>
             <h3 class="text-xl font-semibold py-4">Judul</h3>
             <div class="text-ellipsis line-clamp-3">Ringkasan</div>
           </div>
@@ -70,6 +100,18 @@
             </a>
           </li>
           <li class="">
+            <a href="./pages/membuat-accordion.html">
+              <h3 class="text-xl font-semibold py-4">
+                Membuat accordion sederhana dengan HTML dan CSS
+              </h3>
+              <div class="text-ellipsis line-clamp-3">
+                Kali ini kita akan membuat sebuah menu accordion dengan
+                menggunakan HTML dan CSS murni tanpa menggunakan Javascript
+                sedikitpun.
+              </div>
+            </a>
+          </li>
+          <li class="">
             <a href="./pages/artikel-embed-media.html">
               <h3 class="text-xl font-semibold py-4">
                 Cara Embed Tag Audio dan Video di HTML
@@ -81,15 +123,16 @@
               </div>
             </a>
           </li>
-          <li class="">
-            <h3 class="text-xl font-semibold py-4">Judul</h3>
-            <div class="text-ellipsis line-clamp-3">Ringkasan</div>
-          </li>
         </ul>
       </div>
     </main>
     <footer class="h-[200px] bg-blue-300">
-      <div class="container m-auto">Footer web</div>
+      <div
+        class="w-full h-full container m-auto flex items-center justify-center"
+      >
+        © 2025 WebEduku. Seluruh konten dibuat untuk keperluan edukasi
+        pemrograman web.
+      </div>
     </footer>
   </body>
 </html>

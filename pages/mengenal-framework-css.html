@@ -1,0 +1,173 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Mengenal Pseudo-class dan Pseudo-element di CSS</title>
+  </head>
+  <body class="min-h-[100vh] flex flex-col">
+    <nav class="h-[70px] relative w-full">
+      <div
+        class="fixed w-full h-[70px] bg-blue-300 flex items-center justify-between"
+      >
+        <div class="container m-auto">
+          <a class="text-xl font-semibold" href="../index.html">WebEduku</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 m-auto container pb-10 [&_p]:py-2 text-justify">
+      <div id="homepage-header" class="py-8 border-b border-b-gray-300">
+        <h1 class="text-3xl font-semibold py-2">
+          Mengenal Framework CSS seperti Tailwind dan Bootstrap
+        </h1>
+        <span>Oleh: Alfarell Muchamad Yuwanto</span>
+      </div>
+
+      <div id="content">
+        <p>
+          Dalam pengembangan web modern, menulis kode CSS dari nol untuk setiap
+          elemen bisa memakan waktu dan rentan tidak konsisten. Oleh karena itu,
+          banyak developer kini menggunakan framework CSS untuk mempercepat
+          pengembangan dan menjaga struktur desain yang rapi.
+        </p>
+
+        <p>
+          Dua framework yang paling populer saat ini adalah
+          <strong>Bootstrap</strong> dan <strong>Tailwind CSS</strong>. Keduanya
+          memiliki filosofi, cara penggunaan, dan keunggulan yang berbeda.
+        </p>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Apa Itu Framework CSS?
+        </h2>
+        <p>
+          Framework CSS adalah kumpulan class dan komponen siap pakai yang
+          dibuat untuk mempermudah proses styling website. Dengan framework,
+          kita tidak perlu lagi menulis semua aturan CSS dari awal.
+        </p>
+
+        <p>Ada dua pendekatan besar dalam framework CSS:</p>
+        <ul class="list-disc pl-5">
+          <li>
+            <strong>Utility-first</strong> (seperti Tailwind): menggunakan class
+            kecil untuk tiap properti
+          </li>
+          <li>
+            <strong>Component-based</strong> (seperti Bootstrap): menyediakan
+            komponen siap pakai seperti navbar, tombol, dsb
+          </li>
+        </ul>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Perbandingan Tailwind vs Bootstrap
+        </h2>
+        <p>
+          Berikut ini adalah tabel perbandingan antara Tailwind dan Bootstrap
+          berdasarkan berbagai aspek penting:
+        </p>
+
+        <div class="overflow-x-auto mt-4">
+          <table
+            class="w-full table-auto border border-gray-300 text-left text-sm"
+          >
+            <thead class="bg-blue-300 text-black">
+              <tr>
+                <th class="p-2 border border-gray-300">Aspek</th>
+                <th class="p-2 border border-gray-300">Tailwind CSS</th>
+                <th class="p-2 border border-gray-300">Bootstrap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-blue-100">
+                <td class="p-2 border border-gray-300">Pendekatan</td>
+                <td class="p-2 border border-gray-300">Utility-first</td>
+                <td class="p-2 border border-gray-300">Component-based</td>
+              </tr>
+              <tr>
+                <td class="p-2 border border-gray-300">Ukuran file</td>
+                <td class="p-2 border border-gray-300">
+                  Kecil (terutama dengan purge)
+                </td>
+                <td class="p-2 border border-gray-300">
+                  Lebih besar karena banyak komponen
+                </td>
+              </tr>
+              <tr class="bg-blue-100">
+                <td class="p-2 border border-gray-300">Kustomisasi</td>
+                <td class="p-2 border border-gray-300">Sangat fleksibel</td>
+                <td class="p-2 border border-gray-300">
+                  Terbatas pada tema yang disediakan
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 border border-gray-300">Belajar</td>
+                <td class="p-2 border border-gray-300">
+                  Perlu waktu memahami utility class
+                </td>
+                <td class="p-2 border border-gray-300">
+                  Lebih mudah untuk pemula
+                </td>
+              </tr>
+              <tr class="bg-blue-100">
+                <td class="p-2 border border-gray-300">Desain konsisten</td>
+                <td class="p-2 border border-gray-300">Harus diatur manual</td>
+                <td class="p-2 border border-gray-300">
+                  Langsung konsisten dari awal
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
+          Contoh Penggunaan Keduanya
+        </h2>
+        <p><strong>Contoh tombol dengan Tailwind:</strong></p>
+        <div class="p-4 rounded-xl bg-blue-200/40 border border-gray-300">
+          <button
+            class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+          >
+            Tombol Tailwind
+          </button>
+        </div>
+
+        <p class="mt-4"><strong>Contoh tombol dengan Bootstrap:</strong></p>
+        <div class="p-4 rounded-xl bg-blue-200/40 border border-gray-300">
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+          />
+          <button class="btn btn-primary">Tombol Bootstrap</button>
+        </div>
+
+        <h2 class="mt-8 pt-4 text-2xl">Kesimpulan</h2>
+        <p>
+          Pilihan antara Tailwind dan Bootstrap tergantung pada gaya kerja dan
+          kebutuhan proyek. Jika kamu suka kebebasan penuh dan ingin desain yang
+          sangat custom, Tailwind bisa menjadi pilihan tepat. Namun jika kamu
+          ingin komponen cepat pakai dan desain yang konsisten sejak awal,
+          Bootstrap adalah solusi cepat dan efisien.
+        </p>
+        <p>
+          Keduanya memiliki komunitas besar dan dokumentasi lengkap. Cobalah
+          keduanya agar tahu mana yang paling cocok untuk gaya kerja kamu!
+        </p>
+      </div>
+    </main>
+
+    <footer class="h-[200px] bg-blue-300">
+      <div
+        class="w-full h-full container m-auto flex items-center justify-center"
+      >
+        © 2025 WebEduku. Seluruh konten dibuat untuk keperluan edukasi
+        pemrograman web.
+      </div>
+    </footer>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
