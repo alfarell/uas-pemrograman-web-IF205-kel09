@@ -1,0 +1,487 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Cara Embed Tag Audio dan Video di HTML</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-white">
+      <nav class="h-[70px] relative w-full">
+        <div
+          class="fixed w-full h-[70px] bg-blue-300 flex items-center justify-between"
+        >
+          <div class="container m-auto">
+            <a class="text-xl font-semibold" href="../index.html">Title Web</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="max-w-4xl mx-auto px-6 py-16">
+        <!-- Title -->
+        <div class="mb-20">
+          <h1
+            class="text-5xl md:text-6xl font-light text-gray-900 mb-8 leading-tight"
+          >
+            Cara Embed Tag Audio dan Video di HTML
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">
+            Panduan lengkap untuk menambahkan konten multimedia ke halaman web
+            menggunakan HTML5 dengan pendekatan yang sederhana dan efektif.
+          </p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="mb-20">
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              HTML5 memperkenalkan tag native untuk menangani konten multimedia
+              tanpa memerlukan plugin eksternal. Dengan tag
+              <code>&lt;audio&gt;</code> dan <code>&lt;video&gt;</code>,
+              developer dapat dengan mudah mengintegrasikan media ke dalam
+              halaman web.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Artikel ini akan membahas implementasi praktis dari kedua tag
+              tersebut beserta atribut-atribut penting yang perlu dipahami.
+            </p>
+          </div>
+        </section>
+
+        <!-- AudioSection -->
+        <section class="mb-20">
+          <h2 class="text-3xl font-light text-gray-900 mb-12">Tag Audio</h2>
+
+          <div class="space-y-12">
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Sintaks Dasar
+              </h3>
+              <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                <pre
+                  class="text-sm text-gray-800 leading-relaxed"
+                ><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  Browser Anda tidak mendukung tag audio.
+&lt;/audio&gt;</code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Atribut Penting
+              </h3>
+              <div class="space-y-6">
+                <div class="border-l-2 border-gray-200 pl-6">
+                  <h4 class="font-medium text-gray-900 mb-2">controls</h4>
+                  <p class="text-gray-600">
+                    Menampilkan kontrol audio seperti tombol play, pause, dan
+                    volume.
+                  </p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-6">
+                  <h4 class="font-medium text-gray-900 mb-2">autoplay</h4>
+                  <p class="text-gray-600">
+                    Memutar audio secara otomatis ketika halaman dimuat.
+                  </p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-6">
+                  <h4 class="font-medium text-gray-900 mb-2">loop</h4>
+                  <p class="text-gray-600">
+                    Memutar audio berulang-ulang tanpa henti.
+                  </p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-6">
+                  <h4 class="font-medium text-gray-900 mb-2">muted</h4>
+                  <p class="text-gray-600">Memulai audio dalam keadaan mute.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Contoh Implementasi
+              </h3>
+              <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                <pre
+                  class="text-sm text-gray-800 leading-relaxed"
+                ><code>&lt;!-- Audio dengan kontrol lengkap --&gt;
+&lt;audio controls preload="auto"&gt;
+  &lt;source src="musik.mp3" type="audio/mpeg"&gt;
+  &lt;source src="musik.wav" type="audio/wav"&gt;
+  &lt;p&gt;Browser tidak mendukung pemutaran audio.&lt;/p&gt;
+&lt;/audio&gt;
+              
+&lt;!-- Audio background dengan autoplay --&gt;
+&lt;audio autoplay loop muted&gt;
+    &lt;source src="background.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VideoSection -->
+        <section class="mb-20">
+          <h2 class="text-3xl font-light text-gray-900 mb-12">Tag Video</h2>
+
+          <div class="space-y-12">
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Sintaks Dasar
+              </h3>
+              <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                <pre
+                  class="text-sm text-gray-800 leading-relaxed"
+                ><code>&lt;video width="640" height="360" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  Browser Anda tidak mendukung tag video.
+&lt;/video&gt;</code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Atribut Video
+              </h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                  <div class="border-l-2 border-gray-200 pl-6">
+                    <h4 class="font-medium text-gray-900 mb-2">
+                      width & height
+                    </h4>
+                    <p class="text-gray-600">
+                      Menentukan dimensi video dalam pixel.
+                    </p>
+                  </div>
+                  <div class="border-l-2 border-gray-200 pl-6">
+                    <h4 class="font-medium text-gray-900 mb-2">poster</h4>
+                    <p class="text-gray-600">
+                      Gambar yang ditampilkan sebelum video diputar.
+                    </p>
+                  </div>
+                </div>
+                <div class="space-y-6">
+                  <div class="border-l-2 border-gray-200 pl-6">
+                    <h4 class="font-medium text-gray-900 mb-2">preload</h4>
+                    <p class="text-gray-600">
+                      Mengatur cara video dimuat: none, metadata, atau auto.
+                    </p>
+                  </div>
+                  <div class="border-l-2 border-gray-200 pl-6">
+                    <h4 class="font-medium text-gray-900 mb-2">playsinline</h4>
+                    <p class="text-gray-600">
+                      Video diputar inline pada perangkat mobile.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Video Responsif
+              </h3>
+              <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                <pre
+                  class="text-sm text-gray-800 leading-relaxed"
+                ><code>&lt;video width="100%" height="auto" controls poster="thumbnail.jpg"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.ogg" type="video/ogg"&gt;
+  &lt;p&gt;Browser tidak mendukung pemutaran video.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BestPractices -->
+        <section class="mb-20">
+          <h2 class="text-3xl font-light text-gray-900 mb-12">
+            Best Practices
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Format File
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-2">Audio</h4>
+                  <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>MP3 untuk kompatibilitas universal</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>OGG untuk browser open source</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>WAV untuk kualitas audio tinggi</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-2">Video</h4>
+                  <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>MP4 dengan codec H.264</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>WebM untuk browser modern</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                      <span>OGG sebagai alternatif open source</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">Optimasi</h3>
+              <ul class="space-y-4 text-gray-600">
+                <li class="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                  <span
+                    >Kompres file media untuk mengurangi ukuran dan mempercepat
+                    loading</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                  <span
+                    >Gunakan preload="metadata" untuk loading yang efisien</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                  <span
+                    >Sediakan multiple format untuk kompatibilitas
+                    maksimal</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-right w-4 h-4 flex-shrink-0 mt-1"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                  <span>Tambahkan fallback content untuk browser lama</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="mb-20">
+          <h2 class="text-3xl font-light text-gray-900 mb-12">
+            Contoh Praktis
+          </h2>
+
+          <div class="space-y-12">
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Audio Player
+              </h3>
+              <div class="border border-gray-200 rounded-lg p-8">
+                <audio controls class="w-full">
+                  <source src="/placeholder.mp3" type="audio/mpeg" />
+                  Browser Anda tidak mendukung pemutaran audio.
+                </audio>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-gray-900 mb-6">
+                Video Player
+              </h3>
+              <div class="border border-gray-200 rounded-lg p-8">
+                <video
+                  controls
+                  class="w-full max-w-2xl mx-auto"
+                  poster="/placeholder.svg?height=300&width=500&text=Video+Poster"
+                >
+                  <source src="/placeholder.mp4" type="video/mp4" />
+                  Browser Anda tidak mendukung pemutaran video.
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-20">
+          <h2 class="text-3xl font-light text-gray-900 mb-12">Kesimpulan</h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Tag <code>&lt;audio&gt;</code> dan
+              <code>&lt;video&gt;</code> HTML5 menyediakan cara yang standar dan
+              efisien untuk menambahkan konten multimedia ke halaman web. Dengan
+              memahami atribut-atribut yang tersedia dan menerapkan best
+              practices yang tepat, Anda dapat menciptakan pengalaman multimedia
+              yang optimal bagi pengguna.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Selalu ingat untuk menyediakan fallback content dan multiple
+              format file guna memastikan kompatibilitas yang maksimal di
+              berbagai browser dan perangkat.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="h-[200px] bg-blue-300">
+        <div class="container m-auto">Footer web</div>
+      </footer>
+    </div>
+  </body>
+</html>
