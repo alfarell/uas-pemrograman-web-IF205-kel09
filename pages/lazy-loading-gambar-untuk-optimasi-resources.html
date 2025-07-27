@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Penerapan Lazy Loading Gambar untuk Optimasi Resources</title>
+</head>
+    <body>
+        <div class="min-h-screen bg-white">
+            <nav class="h-[70px] relative w-full">
+                <div class="fixed z-10 w-full h-[70px] bg-blue-300 flex items-center justify-between">
+                    <div class="container m-auto">
+                        <a class="text-xl font-semibold" href="../index.html">WebEduku</a>
+                    </div>
+                </div>
+            </nav>
+            <main class="max-w-4xl mx-auto px-6 py-16 [&_p]:text-justify">
+                <div class="mb-20">
+                    <h1 class="text-5xl md:text-6xl font-light text-gray-900 mb-8 leading-tight">
+                        Penerapan Lazy Loading Gambar untuk Optimasi Resources
+                    </h1>
+                    <span>Oleh: Dimas Janotama</span>
+                </div>
+
+            <section class="mb-20">
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Saat pengguna mengunjungi situs web kamu, browser harus mengunduh dan memproses berbagai 
+                        sumber daya seperti HTML, CSS, JavaScript, gambar, dan font. 
+                        Semakin banyak dan semakin besar sumber daya ini, 
+                        semakin lama waktu yang dibutuhkan situs kamu untuk dimuat sepenuhnya. 
+                        Ini dapat mengakibatkan pengalaman pengguna yang buruk, 
+                        tingkat bounce rate yang tinggi, dan bahkan memengaruhi peringkat SEO kamu.
+                        Di sinilah <strong>strategi pemuatan sumber daya</strong> berperan. 
+                        Tujuannya adalah memastikan bahwa sumber daya penting dimuat secepat mungkin, 
+                        sementara sumber daya yang kurang penting atau yang tidak langsung terlihat dapat ditunda pemuatannya.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        <strong>Lazy loading</strong> adalah teknik di mana gambar atau elemen media lainnya baru 
+                        dimuat saat mereka akan terlihat di layar (atau mendekati terlihat). 
+                        Bayangkan kamu memiliki halaman blog yang sangat panjang dengan banyak gambar. 
+                        Tanpa lazy loading, browser akan mencoba mengunduh semua gambar sekaligus, 
+                        bahkan yang berada jauh di bagian bawah halaman dan mungkin tidak pernah dilihat pengguna. 
+                        Dengan lazy loading, gambar-gambar tersebut hanya akan dimuat ketika pengguna 
+                        scroll ke bawah dan gambar-gambar tersebut mendekati area pandang (viewport) mereka.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <h2 class="text-3xl font-light text-gray-900 mb-12">
+                    Mengapa Menggunakan Lazy Loading?
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <ul class="list-disc pl-5">
+                        <li>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                <strong>Peningkatan Kecepatan Initial Load:</strong> Browser tidak perlu mengunduh semua 
+                                gambar sekaligus, yang berarti konten di bagian atas halaman dapat ditampilkan lebih cepat.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                <strong>Penghematan Bandwidth:</strong> Jika pengguna tidak scroll ke bagian bawah halaman, 
+                                gambar-gambar yang tidak terlihat tidak akan diunduh, menghemat bandwidth baik untuk pengguna 
+                                maupun server.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                <strong>Pengurangan Permintaan Jaringan:</strong> Lebih sedikit HTTP request saat initial load.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+                <h2 class="text-3xl font-light text-gray-900 mb-6 mt-12">
+                    Cara Menerapkan Lazy Loading Gambar
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Ada beberapa cara untuk menerapkan lazy loading:
+                </p>
+                <!-- dan <code>&lt;video&gt;</code> -->
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <strong>a. Atribut <code>loading="lazy"</code> (Native Browser)</strong>
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Ini adalah cara paling mudah dan direkomendasikan karena didukung secara native oleh sebagian 
+                    besar browser modern.
+                </p>
+
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-900 mb-6">
+                            HTML
+                        </h3>
+                        <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                            <pre
+                            class="text-sm text-gray-800 leading-relaxed"
+                            ><code>&lt;img src="gambar-placeholder.jpg" data-src="gambar-asli.jpg" alt="Deskripsi Gambar" loading="lazy"&gt;</code></pre>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        <code>src</code> : Ini adalah gambar placeholder atau gambar yang sangat kecil yang akan ditampilkan 
+                        terlebih dahulu. Kamu bahkan bisa membiarkannya kosong jika ingin gambar muncul begitu saja saat dimuat.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        <code>data-src</code> : Atribut ini menyimpan URL gambar asli yang akan dimuat saat gambar mendekati viewport.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        <code>loading="lazy"</code> : Ini memberi tahu peramban untuk menunda pemuatan gambar 
+                        ini sampai mendekati viewport.
+                    </p>
+                </div>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 mt-12">
+                    <strong>b. Menggunakan JavaScript (Intersection Observer API)</strong>
+                </p>
+                <div class="space-y-12">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Untuk dukungan peramban yang lebih luas atau kontrol yang lebih spesifik, 
+                        Anda bisa menggunakan JavaScript, khususnya Intersection Observer API. 
+                        API ini memungkinkan Anda mendeteksi kapan suatu elemen memasuki atau keluar dari viewport.
+                    </p>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-900">
+                            HTML
+                        </h3>
+                        <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                            <pre
+                            class="text-sm text-gray-800 leading-relaxed"
+                            ><code>&lt;img src="gambar-placeholder.jpg" data-src="gambar-asli.jpg" alt="Deskripsi Gambar" class="lazyload"&gt;</code></pre>
+                        </div>
+                        <h3 class="text-xl font-medium text-gray-900 mt-12">
+                            Javascript
+                        </h3>
+                        <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                            <pre
+                            class="text-sm text-gray-800 leading-relaxed"
+                            ><code>document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazyload");
+          lazyImageObserver.unobserve(lazyImage); // Berhenti mengamati setelah dimuat
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    lazyImages.forEach(function(lazyImage) {
+      lazyImage.src = lazyImage.dataset.src;
+      lazyImage.classList.remove("lazyload");
+    });
+  }
+});</code></pre>
+                        </div>
+
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        <strong>Penjelasan script di atas:</strong>
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        1. Mendapatkan semua gambar dengan kelas <code>lazyload </code>.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        2. Mengecek apakah <code>IntersectionObserver </code> didukung peramban.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        3. Jika didukung, membuat <code>IntersectionObserver </code> yang akan memuat gambar asli ketika 
+                        gambar tersebut bertemu dengan viewport.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        4. Jika tidak, memuat semua gambar secara langsung sebagai fallback.
+                    </p>
+                </div>
+                <section class="mt-20 mb-6">
+                    <h2 class="text-3xl font-light text-gray-900 mt-12 mb-6">
+                        Kesimpulan
+                    </h2>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            lazy loading memastikan bahwa gambar hanya dimuat saat mereka benar-benar dibutuhkan 
+                            (yaitu, ketika mereka mendekati atau masuk ke area pandang pengguna). 
+                            Ini berbeda dengan pemuatan standar di mana semua gambar akan diunduh sekaligus saat halaman pertama kali diakses, 
+                            terlepas dari apakah gambar tersebut terlihat atau tidak. 
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            Dengan mengadopsi lazy loading gambar, 
+                            kamu tidak hanya membuat situs web lebih cepat dan efisien, 
+                            tetapi juga menciptakan pengalaman yang lebih baik dan lebih ramah bagi semua pengguna.
+                        </p>
+                    </div>
+                </section>
+            </main>
+            <footer class="h-[200px] bg-blue-300">
+                <div class="w-full h-full container m-auto flex items-center justify-center">
+                    © 2025 WebEduku. Seluruh konten dibuat untuk keperluan edukasi
+                    pemrograman web.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
