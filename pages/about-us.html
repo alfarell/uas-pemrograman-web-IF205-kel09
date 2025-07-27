@@ -2,8 +2,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>About Us</title>
   </head>
@@ -31,21 +29,23 @@
 
       <div id="content">
         <p>
-          Selamat datang di WebEduku, platform edukasi yang didedikasikan untuk membuka gerbang 
-          Anda menuju dunia pemrograman web yang dinamis dan inovatif. 
-          Kami percaya bahwa setiap orang berhak mendapatkan kesempatan untuk mempelajari keterampilan 
-          digital yang relevan sesuai perkembangan.
+          Selamat datang di WebEduku, platform edukasi yang didedikasikan untuk
+          membuka gerbang Anda menuju dunia pemrograman web yang dinamis dan
+          inovatif. Kami percaya bahwa setiap orang berhak mendapatkan
+          kesempatan untuk mempelajari keterampilan digital yang relevan sesuai
+          perkembangan.
         </p>
 
         <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
           Misi Kami: Mempermudah Pembelajaran Pemrograman Web
         </h2>
         <p>
-          Di WebEduku, misi kami adalah menyajikan materi pembelajaran pemrograman web yang mudah dipahami. 
-          Kami fokus pada tiga pilar utama yang menjadi fondasi setiap website modern: 
-          HTML, CSS, dan JavaScript. Kami memahami bahwa memulai perjalanan pemrograman bisa terasa menakutkan, 
-          oleh karena itu kami merancang setiap tutorial agar ramah bagi pemula namun tetap mendalam 
-          untuk pengembangan lebih lanjut.
+          Di WebEduku, misi kami adalah menyajikan materi pembelajaran
+          pemrograman web yang mudah dipahami. Kami fokus pada tiga pilar utama
+          yang menjadi fondasi setiap website modern: HTML, CSS, dan JavaScript.
+          Kami memahami bahwa memulai perjalanan pemrograman bisa terasa
+          menakutkan, oleh karena itu kami merancang setiap tutorial agar ramah
+          bagi pemula namun tetap mendalam untuk pengembangan lebih lanjut.
         </p>
 
         <h2 class="mt-8 pt-4 border-t border-t-gray-300 text-2xl">
@@ -53,15 +53,21 @@
         </h2>
         <ul class="list-disc pl-5">
           <li>
-            <p><strong>Fokus pada HTML, CSS, dan JavaScript</strong> : Kami menghadirkan panduan lengkap untuk ketiga bahasa 
-            inti ini, yang merupakan tulang punggung pengembangan web front-end. 
-            Anda akan belajar berbagai tutorial terkait HTML dan fiturnya, mempercantik tampilan (CSS), 
-            dan menambahkan interaktivitas dinamis (JavaScript).
+            <p>
+              <strong>Fokus pada HTML, CSS, dan JavaScript</strong> : Kami
+              menghadirkan panduan lengkap untuk ketiga bahasa inti ini, yang
+              merupakan tulang punggung pengembangan web front-end. Anda akan
+              belajar berbagai tutorial terkait HTML dan fiturnya, mempercantik
+              tampilan (CSS), dan menambahkan interaktivitas dinamis
+              (JavaScript).
             </p>
           </li>
           <li>
-            <p><strong>Contoh Praktis</strong> Teori saja tidak cukup! Kami menyediakan banyak contoh kode dan mengajak Anda 
-            untuk mempraktekkan langsung untuk memperkuat pemahaman Anda dan memberikan pengalaman langsung.
+            <p>
+              <strong>Contoh Praktis</strong> Teori saja tidak cukup! Kami
+              menyediakan banyak contoh kode dan mengajak Anda untuk
+              mempraktekkan langsung untuk memperkuat pemahaman Anda dan
+              memberikan pengalaman langsung.
             </p>
           </li>
         </ul>
@@ -70,10 +76,48 @@
           Siapa di Balik WebEduku?
         </h2>
         <p>
-          WebEduku didirikan oleh tim yang bersemangat dalam dunia teknologi dan pendidikan. 
-          Kami adalah para mahasiswa yang ingin berbagi pengetahuan kami dengan cara yang paling efektif. 
-          Kami terus memperbarui konten kami agar tetap relevan dengan perkembangan teknologi web terkini.
+          WebEduku didirikan oleh tim yang bersemangat dalam dunia teknologi dan
+          pendidikan. Kami adalah para mahasiswa yang ingin berbagi pengetahuan
+          kami dengan cara yang paling efektif. Kami terus memperbarui konten
+          kami agar tetap relevan dengan perkembangan teknologi web terkini.
         </p>
+      </div>
+
+      <div id="newsletter" class="mt-12 pt-8 border-t border-t-gray-300">
+        <h2 class="text-2xl mb-4">Berlangganan Newsletter Kami</h2>
+        <p>
+          Dapatkan update terbaru, tutorial eksklusif, dan tips pemrograman web
+          langsung ke kotak masuk Anda!
+        </p>
+        <form
+          id="newsletterForm"
+          class="mt-6 p-6 border border-gray-200 rounded-lg shadow-sm bg-gray-50"
+        >
+          <div class="mb-4">
+            <label
+              for="email"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Alamat Email:</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="contoh@email.com"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Berlangganan
+            </button>
+          </div>
+          <div id="message" class="mt-4 text-center font-medium"></div>
+        </form>
       </div>
     </main>
 
@@ -87,7 +131,30 @@
     </footer>
 
     <script>
-      hljs.highlightAll();
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("newsletterForm");
+        const emailInput = document.getElementById("email");
+        const messageDiv = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const email = emailInput.value;
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (emailRegex.test(email)) {
+            messageDiv.textContent =
+              "Terima kasih telah berlangganan! Anda akan menerima update segera.";
+            messageDiv.className =
+              "mt-4 text-center font-medium text-green-700";
+            emailInput.value = "";
+          } else {
+            messageDiv.textContent = "Mohon masukkan alamat email yang valid.";
+            messageDiv.className = "mt-4 text-center font-medium text-red-700";
+          }
+        });
+      });
     </script>
   </body>
 </html>
