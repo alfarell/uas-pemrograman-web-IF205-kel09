@@ -63,18 +63,14 @@
           ditempatkan di dalam tag details.
         </p>
 
-        <pre>
-          <code class="language-html">
-            &lt;details&gt; 
-              &lt;summary&gt;Judul Accordion 1&lt;/summary&gt;
-              &lt;p&gt;Konten accordion 1&lt;/p&gt; 
-            &lt;/details&gt; 
-            &lt;details&gt;
-              &lt;summary&gt;Judul Accordion 2&lt;/summary&gt; 
-              &lt;p&gt;Konten accordion 2&lt;/p&gt; 
-            &lt;/details&gt;
-          </code>
-        </pre>
+        <pre><code class="language-html">&lt;details&gt; 
+  &lt;summary&gt;Judul Accordion 1&lt;/summary&gt;
+  &lt;p&gt;Konten accordion 1&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt;
+  &lt;summary&gt;Judul Accordion 2&lt;/summary&gt; 
+  &lt;p&gt;Konten accordion 2&lt;/p&gt; 
+&lt;/details&gt;</code></pre>
 
         <p>Kode di atas akan menghasilkan tampilan seperti berikut:</p>
 
@@ -94,44 +90,40 @@
           accordionnya terlihat lebih menarik dan rapi.
         </p>
 
-        <pre>
-          <code class="language-css">
-            details {
-              border: 1px solid #ccc;
-              margin-bottom: 10px;
-              border-radius: 5px;
-              overflow: hidden; /* Untuk memastikan konten tersembunyi dengan baik */
-            }
+        <pre><code class="language-css">details {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden; /* Untuk memastikan konten tersembunyi dengan baik */
+}
 
-            summary {
-              background-color: #f1f1f1;
-              padding: 10px;
-              cursor: pointer;
-              list-style: none; /* Menghilangkan ikon panah bawaan */
-              position: relative; /* Untuk penempatan ::marker */
-            }
+summary {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  list-style: none; /* Menghilangkan ikon panah bawaan */
+  position: relative; /* Untuk penempatan ::marker */
+}
 
-            summary::-webkit-details-marker {
-              display: none; /* Menghilangkan ikon panah bawaan pada Chrome/Safari */
-            }
+summary::-webkit-details-marker {
+  display: none; /* Menghilangkan ikon panah bawaan pada Chrome/Safari */
+}
 
-            summary::before {
-              content: '+'; /* Ikon panah */
-              position: absolute;
-              top: 10px;
-              right: 10px;
-              font-size: 1.2em;
-            }
+summary::before {
+  content: '+'; /* Ikon panah */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+}
 
-            details[open] > summary::before {
-              content: '-'; /* Ganti ikon panah saat terbuka */
-            }
+details[open] > summary::before {
+  content: '-'; /* Ganti ikon panah saat terbuka */
+}
 
-            details > p {
-              padding: 10px;
-            }
-          </code>
-        </pre>
+details > p {
+  padding: 10px;
+}</code></pre>
 
         <p>Maka hasilnya akan tampil seperti ini:</p>
 

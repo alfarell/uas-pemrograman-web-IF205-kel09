@@ -20,4 +20,5 @@ Berikut adalah daftar teknologi yang digunakan untuk project WebEduku
 Anggota:
 
 - Alfarell Muchamad Yuwanto (240401010037)
+- Muhammad Arifin (240401010245)
 - Dimas Janotama (240401010264)
